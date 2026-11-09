@@ -60,11 +60,13 @@ export const metadata: Metadata = {
     description,
     images: ["/og.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { "max-image-preview": "large", "max-snippet": -1 },
-  },
+  robots: site.indexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: { "max-image-preview": "large", "max-snippet": -1 },
+      }
+    : { index: false, follow: false },
   icons: {
     icon: "/favicon.svg",
   },

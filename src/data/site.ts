@@ -10,6 +10,8 @@ const WEEK_DAYS = [
 export const site = {
   // Definí NEXT_PUBLIC_SITE_URL en producción (ej: https://tudominio.com.ar)
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
+  // La demo no se indexa. Para activar el SEO: NEXT_PUBLIC_ALLOW_INDEXING=true
+  indexable: process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true",
   name: "Doña Gorriti",
   tagline: "La empanada salteña",
   phoneDisplay: "+54 351 653-7736",
